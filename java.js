@@ -20,3 +20,8 @@ function multiply(a,b){
 function divide(a,b){
     return +a / +b;
 };
+
+// variables to update number, operator and number for calculator
+let firstNumber = 0;
+let operator = 0;
+let secondNumber = 0;
