@@ -15,3 +15,8 @@ function subtract(a,b){
 function multiply(){
     return +a * +b;
 };
+
+// divide function
+function multiply(){
+    return +a / +b;
+};
