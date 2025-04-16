@@ -12,11 +12,11 @@ function subtract(a,b){
 };
 
 // multiply function
-function multiply(){
+function multiply(a,b){
     return +a * +b;
 };
 
 // divide function
-function multiply(){
+function divide(a,b){
     return +a / +b;
 };
