@@ -4,7 +4,6 @@ function add(a,b){
     return +a + +b;
 };
 
-
 // subtract function
 function subtract(a,b){
     // make sure to create numbers from strings
@@ -25,3 +24,24 @@ function divide(a,b){
 let firstNumber = 0;
 let operator = 0;
 let secondNumber = 0;
+
+// Operate function that takes an operator and two numbers
+
+
+function operate(op,a,b){
+    let result = undefined;
+    // calls the right function for each operation
+    if (op == "+"){
+        result = add(a,b);
+    } else if (op == "-"){
+        result = subtract(a,b);
+    }else if (op == "*"){
+        result = multiply(a,b);
+    } else if (op == "/"){
+        result = divide(a,b);
+    }else{
+        result = false
+    };
+
+    return result;
+};
