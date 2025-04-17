@@ -127,7 +127,13 @@ function displayButton0(){
     };
 };
 
-
+function clearBtn(){
+    const btn = document.querySelector("#clr")
+    btn.onclick = () => {
+        display.textContent = "";
+        displayValue = "";
+    };
+};
 
 let displayValue = "";
 const display = document.querySelector("#display")
@@ -142,3 +148,4 @@ displayButton7();
 displayButton8();
 displayButton9();
 displayButton0();
+clearBtn();
