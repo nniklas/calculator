@@ -50,84 +50,86 @@ function operate(op,a,b){
 function displayButton1(){
     const btn = document.querySelector("#one")
     btn.onclick = () => {
-        display.textContent = "1";
-        displayValue = "1";
+        display.textContent += "1";
+        displayValue += "1";
     };
 };
 // function that reads button pressed and display the number
 function displayButton2(){
     const btn = document.querySelector("#two")
     btn.onclick = () => {
-        display.textContent = "2";
-        displayValue = "2";
+        display.textContent += "2";
+        displayValue += "2";
     };
 };
 // function that reads button pressed and display the number
 function displayButton3(){
     const btn = document.querySelector("#three")
     btn.onclick = () => {
-        display.textContent = "3";
-        displayValue = "3";
+        display.textContent += "3";
+        displayValue += "3";
     };
 };
 // function that reads button pressed and display the number
 function displayButton4(){
     const btn = document.querySelector("#four")
     btn.onclick = () => {
-        display.textContent = "4";
-        displayValue = "4";
+        display.textContent += "4";
+        displayValue += "4";
     };
 };
 // function that reads button pressed and display the number
 function displayButton5(){
     const btn = document.querySelector("#five")
     btn.onclick = () => {
-        display.textContent = "5";
-        displayValue = "5";
+        display.textContent += "5";
+        displayValue += "5";
     };
 };
 // function that reads button pressed and display the number
 function displayButton6(){
     const btn = document.querySelector("#six")
     btn.onclick = () => {
-        display.textContent = "6";
-        displayValue = "6";
+        display.textContent += "6";
+        displayValue += "6";
     };
 };
 // function that reads button pressed and display the number
 function displayButton7(){
     const btn = document.querySelector("#seven")
     btn.onclick = () => {
-        display.textContent = "7";
-        displayValue = "7";
+        display.textContent += "7";
+        displayValue += "7";
     };
 };
 // function that reads button pressed and display the number
 function displayButton8(){
     const btn = document.querySelector("#eight")
     btn.onclick = () => {
-        display.textContent = "8";
-        displayValue = "8";
+        display.textContent += "8";
+        displayValue += "8";
     };
 };
 // function that reads button pressed and display the number
 function displayButton9(){
     const btn = document.querySelector("#nine")
     btn.onclick = () => {
-        display.textContent = "9";
-        displayValue = "9";
+        display.textContent += "9";
+        displayValue += "9";
     };
 };
 // function that reads button pressed and display the number
 function displayButton0(){
     const btn = document.querySelector("#zero")
     btn.onclick = () => {
-        display.textContent = "0";
-        displayValue = "0";
+        display.textContent += "0";
+        displayValue += "0";
     };
 };
 
-let displayValue = "start up this carp";
+
+
+let displayValue = "";
 const display = document.querySelector("#display")
 display.textContent = displayValue;
 displayButton1();
