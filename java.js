@@ -50,8 +50,14 @@ function operate(op,a,b){
 function displayButton1(){
     const btn = document.querySelector("#one")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "1";
+            console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "1";
+        };
         displayValue += "1";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
@@ -132,20 +138,81 @@ function clearBtn(){
     btn.onclick = () => {
         display.textContent = "";
         displayValue = "";
+        firstVal = "";
+        secondVal = "";
     };
+};
+
+function displayNums(){
+        displayButton1();
+        displayButton2();
+        displayButton3();
+        displayButton4();
+        displayButton5();
+        displayButton6();
+        displayButton7();
+        displayButton8();
+        displayButton9();
+        displayButton0();
 };
 
 let displayValue = "";
 const display = document.querySelector("#display")
 display.textContent = displayValue;
-displayButton1();
-displayButton2();
-displayButton3();
-displayButton4();
-displayButton5();
-displayButton6();
-displayButton7();
-displayButton8();
-displayButton9();
-displayButton0();
+
+
+
+//logic for operations
+let firstVal = "";
+let secondVal = "";
+let selectedOp = "";
+let lastClick = "";
 clearBtn();
+
+calculate();
+displayNums();
+
+// also store selected operation in variable
+function calculate(){
+    const addBtn = document.querySelector("#add")
+    const subBtn = document.querySelector("#sub")
+    const multBtn = document.querySelector("#mult")
+    const divBtn = document.querySelector("#div")
+
+    addBtn.onclick = () => {
+        // if user selects an operator button again without entering numbers first
+        // do nothing
+        if (lastClick == "op"){
+            console.log("you have to enter a number first")
+        } else {
+            console.log(`lastclick is ${lastClick}`)
+            // when user presses an operator button, read displayVal and store it as firstVal
+            if (firstVal == ""){
+                firstVal = display.textContent;
+                selectedOp = "+";
+                console.log(`firstval is ${firstVal}`)
+            } 
+            // when user presses an operator button and has entered a secondVal
+            else if (firstVal != ""){
+                secondVal = display.textContent;
+                display.textContent = operate(selectedOp,firstVal,secondVal);
+                console.log(`result is ${display.textContent}`)
+                firstVal = display.textContent;
+                secondVal = "";
+            }; 
+        };
+        lastClick = "op";
+    };
+};
+
+
+
+// perform the stored operation on firstVal and secondval
+
+// if division by zero, show error message and clear all variables
+
+// after performed operation, store result as firstVal and loop same logic
+
+// if user presses =, display result (SecondVal) and clear variables after to begin anew
+
+// if user presses clear, reset all.
