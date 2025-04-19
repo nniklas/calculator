@@ -17,6 +17,8 @@ function multiply(a,b){
 
 // divide function
 function divide(a,b){
+    if (b=="0")
+        return ("lmao")
     return +a / +b;
 };
 
@@ -78,64 +80,112 @@ function displayButton2(){
 function displayButton3(){
     const btn = document.querySelector("#three")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "3";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "3";
+        };
         displayValue += "3";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton4(){
     const btn = document.querySelector("#four")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "4";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "4";
+        };
         displayValue += "4";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton5(){
     const btn = document.querySelector("#five")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "5";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "5";
+        };
         displayValue += "5";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton6(){
     const btn = document.querySelector("#six")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "6";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "6";
+        };
         displayValue += "6";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton7(){
     const btn = document.querySelector("#seven")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "7";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "7";
+        };
         displayValue += "7";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton8(){
     const btn = document.querySelector("#eight")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "8";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "8";
+        };
         displayValue += "8";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton9(){
     const btn = document.querySelector("#nine")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "9";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "9";
+        };
         displayValue += "9";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
 function displayButton0(){
     const btn = document.querySelector("#zero")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "0";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "0";
+        };
         displayValue += "0";
+        lastClick = "num";
     };
 };
 
