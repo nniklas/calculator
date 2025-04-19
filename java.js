@@ -52,7 +52,7 @@ function displayButton1(){
     btn.onclick = () => {
         if (lastClick == "op"){
             display.textContent = "1";
-            console.log(`lastclick was op, clear and display..`)
+            // console.log(`lastclick was op, clear and display..`)
         } else {
         display.textContent += "1";
         };
@@ -64,8 +64,14 @@ function displayButton1(){
 function displayButton2(){
     const btn = document.querySelector("#two")
     btn.onclick = () => {
+        if (lastClick == "op"){
+            display.textContent = "2";
+            // console.log(`lastclick was op, clear and display..`)
+        } else {
         display.textContent += "2";
+        };
         displayValue += "2";
+        lastClick = "num";
     };
 };
 // function that reads button pressed and display the number
@@ -156,6 +162,7 @@ function equalBtn(){
             console.log(`result is ${display.textContent}`)
             firstVal = "";
             secondVal = "";
+            lastClick = "op";
         };
     };
 };
@@ -207,6 +214,31 @@ function calculate(){
             if (firstVal == ""){
                 firstVal = display.textContent;
                 selectedOp = "+";
+                console.log(`firstval is ${firstVal}`)
+            }
+            // when user presses an operator button and has entered a secondVal
+            else if (firstVal != ""){
+                secondVal = display.textContent;
+                display.textContent = operate(selectedOp,firstVal,secondVal);
+                console.log(`result is ${display.textContent}`)
+                firstVal = display.textContent;
+                secondVal = "";
+            }; 
+        };
+        lastClick = "op";
+    };
+
+    subBtn.onclick = () => {
+        // if user selects an operator button again without entering numbers first
+        // do nothing
+        if (lastClick == "op"){
+            console.log("you have to enter a number first")
+        } else {
+            console.log(`lastclick is ${lastClick}`)
+            // when user presses an operator button, read displayVal and store it as firstVal
+            if (firstVal == ""){
+                firstVal = display.textContent;
+                selectedOp = "-";
                 console.log(`firstval is ${firstVal}`)
             }
             // when user presses an operator button and has entered a secondVal
