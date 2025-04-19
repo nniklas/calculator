@@ -133,6 +133,7 @@ function displayButton0(){
     };
 };
 
+// button that clear and resets everything
 function clearBtn(){
     const btn = document.querySelector("#clr")
     btn.onclick = () => {
@@ -140,6 +141,22 @@ function clearBtn(){
         displayValue = "";
         firstVal = "";
         secondVal = "";
+    };
+};
+
+// button that clear and resets everything
+function equalBtn(){
+    const btn = document.querySelector("#equal")
+    btn.onclick = () => {
+        if (firstVal == ""){
+            console.log("Do nothing with equal because firstval is not entered")
+        } else{
+            secondVal = display.textContent;
+            display.textContent = operate(selectedOp,firstVal,secondVal);
+            console.log(`result is ${display.textContent}`)
+            firstVal = "";
+            secondVal = "";
+        };
     };
 };
 
@@ -168,7 +185,7 @@ let secondVal = "";
 let selectedOp = "";
 let lastClick = "";
 clearBtn();
-
+equalBtn();
 calculate();
 displayNums();
 
@@ -191,7 +208,7 @@ function calculate(){
                 firstVal = display.textContent;
                 selectedOp = "+";
                 console.log(`firstval is ${firstVal}`)
-            } 
+            }
             // when user presses an operator button and has entered a secondVal
             else if (firstVal != ""){
                 secondVal = display.textContent;
