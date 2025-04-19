@@ -257,6 +257,60 @@ function calculate(){
         };
         lastClick = "op";
     };
+
+    multBtn.onclick = () => {
+        // if user selects an operator button again without entering numbers first
+        // do nothing
+        if (lastClick == "op"){
+            selectedOp = "*";
+            console.log("you have to enter a number first")
+        } else {
+            console.log(`lastclick is ${lastClick}`)
+            // when user presses an operator button, read displayVal and store it as firstVal
+            if (firstVal == ""){
+                firstVal = display.textContent;
+                selectedOp = "*";
+                console.log(`firstval is ${firstVal}`)
+            }
+            // when user presses an operator button and has entered a secondVal
+            else if (firstVal != ""){
+                secondVal = display.textContent;
+                display.textContent = operate(selectedOp,firstVal,secondVal);
+                console.log(`result is ${display.textContent}`)
+                firstVal = display.textContent;
+                secondVal = "";
+                selectedOp = "*";
+            }; 
+        };
+        lastClick = "op";
+    };
+    
+    divBtn.onclick = () => {
+        // if user selects an operator button again without entering numbers first
+        // do nothing
+        if (lastClick == "op"){
+            selectedOp = "/";
+            console.log("you have to enter a number first")
+        } else {
+            console.log(`lastclick is ${lastClick}`)
+            // when user presses an operator button, read displayVal and store it as firstVal
+            if (firstVal == ""){
+                firstVal = display.textContent;
+                selectedOp = "/";
+                console.log(`firstval is ${firstVal}`)
+            }
+            // when user presses an operator button and has entered a secondVal
+            else if (firstVal != ""){
+                secondVal = display.textContent;
+                display.textContent = operate(selectedOp,firstVal,secondVal);
+                console.log(`result is ${display.textContent}`)
+                firstVal = display.textContent;
+                secondVal = "";
+                selectedOp = "/";
+            }; 
+        };
+        lastClick = "op";
+    };
 };
 
 
