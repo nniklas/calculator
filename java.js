@@ -190,7 +190,7 @@ display.textContent = displayValue;
 let firstVal = "";
 let secondVal = "";
 let selectedOp = "";
-let lastClick = "";
+let lastClick = "op";
 clearBtn();
 equalBtn();
 calculate();
@@ -207,10 +207,12 @@ function calculate(){
         // if user selects an operator button again without entering numbers first
         // do nothing
         if (lastClick == "op"){
+            selectedOp = "+";
             console.log("you have to enter a number first")
         } else {
             console.log(`lastclick is ${lastClick}`)
             // when user presses an operator button, read displayVal and store it as firstVal
+            
             if (firstVal == ""){
                 firstVal = display.textContent;
                 selectedOp = "+";
@@ -223,6 +225,7 @@ function calculate(){
                 console.log(`result is ${display.textContent}`)
                 firstVal = display.textContent;
                 secondVal = "";
+                selectedOp = "+";
             }; 
         };
         lastClick = "op";
@@ -232,6 +235,7 @@ function calculate(){
         // if user selects an operator button again without entering numbers first
         // do nothing
         if (lastClick == "op"){
+            selectedOp = "-";
             console.log("you have to enter a number first")
         } else {
             console.log(`lastclick is ${lastClick}`)
@@ -248,6 +252,7 @@ function calculate(){
                 console.log(`result is ${display.textContent}`)
                 firstVal = display.textContent;
                 secondVal = "";
+                selectedOp = "-";
             }; 
         };
         lastClick = "op";
